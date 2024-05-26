@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Login</title>
+<style>
+.register_div{
+background: rgba(255,255,255,.4);
+box-shadow: 0 5px 5px rgba(0,0,0,.2);
+}
+.errorlist{
+font-size:15px;
+color:orange;
+background:rgba(0,0,0,.5);
+}
+.register_div:hover{
+    background: rgba(255,255,255,.8);
+    
+}
+</style>
+    </head>
+    <body>
+        {%extends 'base.html'%}
+        {% load static %}
+        {% block content%}
+        <div class="header_image"style="background-image:url('{% static 'images/9.jpg'%}');
+                                        background-attachment: fixed;;
+                                        background-size: cover;
+                                        background-position: center;
+                                        width:100%;
+                                        height:110vh;
+                                        opacity:0.8">
+        
+
+            <div class="col-sm-12 .col-12 pt-5"></div>
+            <div class="row mx-auto col-sm-4 .col-12 register_div">
+                <h3 class="text-warning mx-auto  col-sm-12 mt-2 pb-3 label">Account Login</h3>
+                <small class="text-denger text-denger errorlist">{%if error%} {{error}}{% endif %}</small>
+                <form class="form mx-auto col-sm-12" action="" method="POST" novalidate>
+                    {%csrf_token%}
+                    {{form.non_field_errors}}
+                    {%for i in form%}
+                    <p>{{i.label_tag}}
+                    {{i}}</p>
+                    <small>{{i.errors}}</small>
+                    <hr>
+                    {%endfor%}
+                    <input type="submit" class="btn btn-success" value="Login">
+                    <hr>
+                    <p class="text-info">Create new account <a href="{%url 'signup' %}" style="color:red"> SignUp Here</a></p>
+
+                </form>
+            </div>
+
+
+
+        </div>
+
+            
+
+        {%endblock content%}
+    </body>
+</html>

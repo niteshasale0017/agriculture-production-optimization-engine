@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{%load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href=""}>
+    
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title></title>
+  <style>
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand font-italic font-weight-bold" href="{%url 'home'%}">Agricultural Production Optimization Engine</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active text-warning" aria-current="page" href="{%url 'predict'%}">Crops Predict</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="{%url 'statistics'%}">Crops Statistics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="{%url 'average'%}">Average & Condition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="{%url 'climat'%}">Climat & Condition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="{%url 'season'%}">Crops Season</a>
+        </li>
+        <li class="nav-item">
+          {%if request.session.user_id%}
+              <a class="nav-link text-warning bg-light text-center" style="border-radius:25px;" href="{%url 'logout'%}"> Logout <i class="fa fa-sign"></i> </a>
+          {%else%}
+              <a class="nav-link text-warning bg-light text-center" style="border-radius:25px;" href="{%url 'login'%}"> Login <i class="fa fa-sign"></i> </a>
+          {%endif%}
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+  
+</nav>
+
+
+
+{%block content%}
+
+
+{%endblock content%}
+
+
+<div class="footer_div text-center"style="
+                                          margin-top:30vh;
+                                          background:black;
+                                          height:10vh;
+                                          width:100%;
+                                          ">
+  <p style="color:white;font-style: italic;padding:15px;">©Copyright
+        <span>Harvert Model Deployment</span> |
+        <span>Designed & Developed By niteshasale358@gmail.com</span></p>
+</div>
+</body>
+</html>

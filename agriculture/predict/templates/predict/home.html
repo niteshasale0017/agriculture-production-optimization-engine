@@ -1,0 +1,154 @@
+{% extends 'base.html'%}
+{% load static %}
+<html>
+<head>
+<style>
+
+</style>
+</head>
+{%block content%}
+<div class="header_image"style="background-image:url('{% static 'images/6.jpg'%}');
+								background-attachment: fixed;;
+								background-size: cover;
+								background-position: center;
+								width:100%;
+								height:70vh;">
+  </div>
+
+
+<section class="blog py-5">
+	<div class="container py-md-5">
+		<h3 class="heading mb-sm-5 mb-4 text-center"> Our Services</h3>
+		<div class="row blog-grids">
+			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
+				<img src="{% static 'images/3.jpg'%}" class="img-fluid" alt="">
+				<a href="{%url 'predict'%}">
+					<div style="background: #fff;
+						    padding: 30px;
+						    margin-top: -2em;
+						    position: absolute;
+						    left: 6%;
+						    right: 6%;
+						    top: 200px;
+						    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 8%), 0 5px 8px 0 rgb(0 0 0 / 12%), 0 1px 14px 0 rgb(0 0 0 / 6%);">
+
+						<h4>Crops Prediction</h4>
+
+						<p class="mt-2">Recommendation about the type of crops to be cultivated which is best suited
+							for the respective conditions.</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5">
+				<img src="{% static 'images/4.jpg'%}" class="img-fluid" alt="">
+				<a href="{%url 'statistics'%}">
+					<div style="background: #fff;
+						    padding: 30px;
+						    margin-top: -2em;
+						    position: absolute;
+						    left: 6%;
+						    right: 6%;
+						    top: 200px;
+						    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 8%), 0 5px 8px 0 rgb(0 0 0 / 12%), 0 1px 14px 0 rgb(0 0 0 / 6%);">
+						<h4>Statistics</h4>
+						<p class="mt-2">Recommenddation about the to check summary statistics for each and every crops.</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
+
+				<img src="{% static 'images/5.jpg'%}" class="img-fluid" alt="">
+
+				<!-- <img src="images/s4.jpg" class="img-fliud" alt="" /> -->
+				<a href="{% url 'average'%}">
+					<<div style="background: #fff;
+						    padding: 30px;
+						    margin-top: -2em;
+						    position: absolute;
+						    left: 6%;
+						    right: 6%;
+						    top: 200px;
+						    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 8%), 0 5px 8px 0 rgb(0 0 0 / 12%), 0 1px 14px 0 rgb(0 0 0 / 6%);">
+						<h4>Crop with Avg Condition.</h4>
+						<p class="mt-2">Lets the compare the average requirement for each crops with average condition.</p>
+					</div>
+				</a>
+			</div>
+
+		</div>
+
+
+
+		<div class="row blog-grids"style="margin-top:25vh;">
+			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
+				<img src="{% static 'images/6.jpg'%}" class="img-fluid" alt="">
+				<a href="{%url 'climat'%}">
+					<div style="background: #fff;
+						    padding: 30px;
+						    margin-top: -2em;
+						    position: absolute;
+						    left: 6%;
+						    right: 6%;
+						    top: 200px;
+						    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 8%), 0 5px 8px 0 rgb(0 0 0 / 12%), 0 1px 14px 0 rgb(0 0 0 / 6%);">
+
+						<h4>Climat & Condition.</h4>
+
+						<p class="mt-2">Recommendation about the to display the crops required for below and above average climat condtions</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5">
+				<img src="{% static 'images/8.jpg'%}" class="img-fluid" alt="">
+				<a href="{%url 'season'%}">
+					<div style="background: #fff;
+						    padding: 30px;
+						    margin-top: -2em;
+						    position: absolute;
+						    left: 6%;
+						    right: 6%;
+						    top: 200px;
+						    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 8%), 0 5px 8px 0 rgb(0 0 0 / 12%), 0 1px 14px 0 rgb(0 0 0 / 6%);">
+						<h4>Crops grow in season.</h4>
+						<p class="mt-2">Lets find which crops can only be grown in summer season, winter season and rainy season</p>
+					</div>
+				</a>
+			</div>
+			
+			
+		</div>
+	</div>
+</section>
+
+
+<div class="header_image"style="background-image:url('{% static 'images/4.jpg'%}');
+								background-attachment: fixed;;
+								background-size: cover;
+								background-position: center;
+								width:100%;
+								height:70vh;
+								margin-top: 10vh;">
+ </div>
+
+
+<h3 class="mt-5 text-center">About Us</h3>
+<div class="row core-grids mt-5 mx-auto">
+	<div class="col-lg-6 core-left">
+		<img src="{%static 'images/1.jpg'%}" class="img-fluid" alt=""style="">
+	</div>
+	<div class="col-lg-6 core-right">
+		<h3 class="mt-4 pt-5">Improving Agriculture, Improving Lives, Cultivating Crops To Make Farmers Increase
+			Profit.</h3>
+		<p class="mt-3">We use state-of-the-art machine learning technologies to help you
+			guide through
+			the entire farming process. Make informed decisions to understand the demographics of your area,
+			understand the
+			factors that affect your crop and keep them healthy for a super awesome successful yield.</p>
+	</div>
+</div>
+
+
+{%endblock content%}
+
+
+</html>

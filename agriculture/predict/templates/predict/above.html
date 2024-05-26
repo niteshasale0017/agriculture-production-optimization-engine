@@ -1,0 +1,41 @@
+<div class="col-sm-1 col-lg-1"></div>
+<div class="col-sm-4 col-lg-4">
+	<table class="table">
+	    <thead>
+	      <tr>
+	        <th>Crops with requirement is greater than average</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{%for i in above%}
+	    	{% for j in i%}
+	    		<tr>
+	    			<td>{{j}}</td>
+	    		</tr>
+	    	{%endfor%}
+	    	{%endfor%}
+	      	      
+	    </tbody>
+		</table>
+	</div>
+	
+	<div class="col-sm-4 col-lg-4">
+		<table class="table">
+	    <thead>
+	      <tr>
+	        <th>Crops with requirement is less than average</th>
+	      </tr>
+	    <tbody>
+	    	{%for i in below%}
+	    	{% for j in i%}
+	    		<tr>
+	    			<td>{{j}}</td>
+	    		</tr>
+	    	{%endfor%}
+	    	{%endfor%}
+	      	      
+	    </tbody>  
+	      				      
+	    </tbody>
+		</table>
+	</div>

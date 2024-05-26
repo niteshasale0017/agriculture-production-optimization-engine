@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%load static %}
+{% block content%}
+
+
+
+<div class="header_image"style="background-image:url('{% static 'images/6.jpg'%}');
+								background-attachment: fixed;;
+								background-size: cover;
+								background-position: center;
+								width:100%;
+								height:70vh;">
+</div>
+
+<div class="container-fluid mt-5">
+	<h3 class="text-center font-italic">Find out most suitable crops to grow in your farm.</h3>
+	<form method="POST" action="{%url 'predict'%}">
+	<div class="row col-sm-12 col-lg-12">
+		
+			{% csrf_token%}
+			<div class="col-sm-6">
+				<label class="form-control-label">Nitrogen</label>
+				<input type="number" class="form-control"name="nitrogen" placeholder="Nitrogen" min=0 max=140 required>
+			</div>
+			<div class="col-sm-6">
+				<label class="form-control-label">Phosphorus</label>
+				<input type="number" class="form-control"name="phosphorus" placeholder="Phosphorus" min=5 max=145 required>
+			</div>
+			<div class="col-sm-6">
+				<label class="form-control-label">Potassium</label>
+				<input type="number" class="form-control"name="potassium" placeholder="Potassium" min=5 max=205 required>
+			</div>
+			<div class="col-sm-6">
+				<label class="form-control-label">Temperature</label>
+				<input type="number" class="form-control"name="temperature" placeholder="Temperature" min=8 max=43 required>
+			</div>
+			<div class="col-sm-6">
+				<label class="form-control-label">Humidity</label>
+				<input type="number" class="form-control"name="humidity" placeholder="Humidity" min=14 max=99 required>
+			</div>
+			<div class="col-sm-6">
+				<label class="form-control-label">PH</label>
+				<input type="number" class="form-control"name="ph" placeholder="PH" min=3 max=9 required>
+			</div>
+			<div class="col-sm-6">
+				<label class="form-control-label">Rainfall</label>
+				<input type="number" class="form-control"name="rainfall" placeholder="Rainfall" min=20 max=298 required>
+			</div>
+			<div class="col-sm-6">
+				<label></label>
+				<input type="submit" name="submit" value="Predict" class="btn btn-success form-control mt-2">
+			</div>
+		
+	</div>
+	</form>
+</div>
+
+
+<div class="bg-info mt-5">
+	{% if output %}
+		<h3 class="alert-success text-center"><span style="color:red;"><b><u>{{output}}</u></b></span> is most suitable crops in your farm.</h3>
+	{%endif%}
+</div>
+
+
+
+
+
+
+
+{% endblock content%}
+</body>
+</html>
